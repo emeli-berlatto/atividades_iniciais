@@ -1,0 +1,11 @@
+.responsive-div{
+    width: 100%;
+    height: 200px;
+    background-color:#FF0000;
+}
+
+@media(max-width:600px) {
+    .responsive-div{
+        background-color: #00FF00;
+    }
+}
