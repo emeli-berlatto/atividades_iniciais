@@ -13,12 +13,14 @@ class Materia {
 
     function getAll() {
         $sql = "SELECT 
-            id, 
+            m.id, c.nome,
             id_curso,
-            nome, 
+            m.nome, 
             duraçao_materia,
-            DATE_FORMAT(data_cadastro, '%d/%m/%Y %H:%i:%s') data_cadastro
-        FROM Materia";
+            DATE_FORMAT(m.data_cadastro, '%d/%m/%Y %H:%i:%s') data_cadastro
+        FROM Materia m
+        inner join curso c on (m.id_curso = c.id)
+";
         $result = $this->conn->query($sql);
 
         $data = [];
